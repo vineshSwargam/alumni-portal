@@ -1,0 +1,628 @@
+@font-face {
+  font-family: Brandon_bld;
+  src: url(./fonts/Brandon_bld.otf); }
+
+@font-face {
+  font-family: Brandon_light;
+  src: url(./fonts/Brandon_light.otf); }
+
+@font-face {
+  font-family: Brandon_reg;
+  src: url(./fonts/Brandon_reg.otf); }
+
+html, body {
+  padding: 0;
+  margin: 0;
+  width: 100%; }
+
+body {
+  background-attachment: fixed;
+  background-size: cover;
+  background: #cccccc;
+  font-family: Brandon_reg; }
+
+a {
+  text-decoration: none;
+  color: #222; }
+
+h1, h2, h3, h4, h5, p {
+  margin: 0;
+  line-height: 1.5;
+  word-spacing: 1.5;
+  letter-spacing: 1.7; }
+
+ul {
+  display: inline;
+  list-style: none;
+  padding: 0;
+  margin: 0; }
+  ul li {
+    display: inline; }
+
+input {
+  border: 0;
+  border-radius: 0.3rem;
+  resize: 'none';
+  outline: 0;
+  font-size: '14px';
+  color: '#999';
+  padding: 0.8rem;
+  padding-right: 0; }
+
+select {
+  border: 0;
+  border-radius: 0.3rem;
+  resize: 'none';
+  outline: 0;
+  font-size: '14px';
+  color: '#999';
+  padding-right: 0;
+  font-family: Brandon_reg; }
+
+.actionButton {
+  display: inline-block;
+  border: none;
+  margin: 0 auto;
+  font-family: Brandon_reg;
+  font-size: 1rem;
+  padding: 0.2rem 0;
+  border-radius: 1rem;
+  background: #282828;
+  text-align: center;
+  color: #eee;
+  cursor: pointer; }
+
+.navbar {
+  z-index: 100;
+  align-items: center;
+  width: 95%;
+  font-family: Brandon_bld;
+  margin: 0 auto;
+  display: flex;
+  padding: 0 3rem;
+  box-sizing: border-box;
+  background: rgba(20, 20, 20, 0.2); }
+  .navbar :nth-child(1n) {
+    display: inline; }
+  .navbar .navheader {
+    display: flex;
+    align-items: center;
+    font-size: 30px;
+    color: #fafafa; }
+    .navbar .navheader img {
+      width: 45px;
+      height: auto;
+      margin-right: 12px; }
+  .navbar .navmenu {
+    flex: 0.6;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    margin-left: auto;
+    font-size: 18px; }
+    .navbar .navmenu #sort select {
+      background: rgba(20, 20, 20, 0.2);
+      color: #fafafa;
+      font-size: 18px;
+      font-family: Brandon_bld; }
+      .navbar .navmenu #sort select option {
+        background: rgba(20, 20, 20, 0.7); }
+      .navbar .navmenu #sort select option:hover {
+        box-shadow: inset 20px 20px rgba(20, 20, 20, 0.7); }
+    .navbar .navmenu .navitem {
+      display: inline;
+      color: #fafafa;
+      position: relative;
+      cursor: pointer; }
+      .navbar .navmenu .navitem .item {
+        position: absolute;
+        visibility: hidden;
+        left: 0;
+        top: 2em;
+        line-height: 40px;
+        transform: translateY(-1em);
+        background: rgba(0, 0, 0, 0.6);
+        transition: .5s ease-out transform; }
+        .navbar .navmenu .navitem .item :nth-child(1n) {
+          margin: 5px; }
+    .navbar .navmenu .navitem:hover .item {
+      visibility: visible;
+      transform: translateY(0); }
+    .navbar .navmenu #login {
+      background: #309267;
+      color: #fafafa;
+      border-radius: 20px;
+      padding: 5px 25px;
+      transition: 0.2s ease-in background; }
+    .navbar .navmenu #login:hover {
+      background: #438ca8; }
+
+#floatingNav {
+  display: flex;
+  position: fixed;
+  width: 95%;
+  height: 80px;
+  border: 0.5px solid rgba(246, 246, 246, 0.2);
+  left: 0;
+  right: 0;
+  transform: translateY(20px);
+  transition: .7s ease-out all;
+  margin-top: 20px; }
+
+#welcome {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)), url("../img/college.jpg");
+  background-attachment: fixed;
+  background-size: inherit;
+  background-position-x: -25rem;
+  height: 100vh;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #ebebeb;
+  text-align: center; }
+  #welcome img {
+    margin: 0 auto;
+    width: 100px;
+    height: auto; }
+  #welcome #greeting {
+    margin: 2rem 0 2rem 0;
+    font-size: 15px; }
+  #welcome #collegeName {
+    font-size: 77px;
+    font-family: Brandon_bld;
+    color: #eeeeff; }
+  #welcome .btn-about {
+    position: relative;
+    color: #ebebeb;
+    border: none;
+    text-decoration: none;
+    font-family: Coda;
+    font-size: 17px;
+    font-weight: 500;
+    padding: 7px 10px;
+    padding-right: 32px;
+    margin-top: 3rem;
+    background: none;
+    cursor: pointer; }
+    #welcome .btn-about i {
+      position: absolute;
+      top: 0.7em;
+      margin-left: 7px; }
+    #welcome .btn-about:before {
+      content: '';
+      position: absolute;
+      top: -2px;
+      bottom: -2px;
+      left: 1px;
+      right: 1px;
+      border: 1px solid white; }
+    #welcome .btn-about:after {
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: -2px;
+      right: -2px;
+      border: 1px solid white; }
+
+#signup {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), url("../img/man.jpg");
+  background-attachment: fixed;
+  background-size: cover;
+  height: 100vh;
+  box-sizing: border-box;
+  color: #ebebeb;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end; }
+  #signup #signupBox {
+    width: 22%;
+    margin-right: 5%;
+    background: rgba(17, 17, 17, 0.5);
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    padding: 0.5rem 3rem; }
+    #signup #signupBox :nth-child(1n) {
+      margin: 0.5rem 0; }
+    #signup #signupBox #header {
+      font-size: 2rem;
+      margin-top: 0rem; }
+    #signup #signupBox input[type='text'] {
+      font-family: Brandon_reg; }
+    #signup #signupBox input[type='password'] {
+      font-family: Brandon_reg; }
+    #signup #signupBox #btnSignup {
+      width: 40%;
+      border: none;
+      border-radius: 2rem;
+      text-decoration: none;
+      font-family: Coda;
+      font-size: 16px;
+      padding: 7px 10px;
+      background: #438ca8;
+      color: #fff;
+      cursor: pointer; }
+    #signup #signupBox #loginBoxFooter {
+      width: 75%;
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between; }
+      #signup #signupBox #loginBoxFooter #btnLogin {
+        width: 40%;
+        border: none;
+        border-radius: 2rem;
+        text-decoration: none;
+        font-family: Coda;
+        font-size: 16px;
+        padding: 7px 10px;
+        background: #438ca8;
+        color: #fff;
+        cursor: pointer; }
+
+.mission {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("../img/mission.jpg");
+  background-attachment: fixed;
+  background-size: cover;
+  box-sizing: border-box;
+  color: #ebebeb; }
+  .mission .missionBox {
+    width: 90%;
+    height: 100vh;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center; }
+    .mission .missionBox .missionTitle {
+      margin-top: 6rem;
+      margin-bottom: 2rem;
+      font-size: 4rem;
+      font-family: Coda; }
+    .mission .missionBox .missionContent {
+      width: 75%;
+      margin: 0 auto;
+      font-size: 20px;
+      font-family: Brandon_reg; }
+      .mission .missionBox .missionContent ul {
+        display: block;
+        padding: 0;
+        margin: 0; }
+        .mission .missionBox .missionContent ul li {
+          display: block; }
+
+#vision {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("../img/vision.jpg"); }
+
+.about {
+  background: linear-gradient(to bottom left, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("../img/about.jpg");
+  background-attachment: fixed;
+  background-size: cover;
+  box-sizing: border-box;
+  height: 90vh;
+  text-align: center;
+  font-family: Coda;
+  position: relative;
+  color: #cccccc; }
+  .about .about-content {
+    width: 27%;
+    height: 70%;
+    margin-left: auto;
+    margin-right: 7rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; }
+    .about .about-content h1 {
+      text-align: left;
+      font-size: 4.3rem; }
+    .about .about-content p {
+      text-align: justify;
+      font-size: 1rem;
+      margin-top: 0.5rem; }
+
+.services {
+  font-family: Brandon_reg;
+  text-align: center;
+  padding-bottom: 3rem; }
+  .services .services-content {
+    margin-top: 5rem;
+    margin-bottom: 3rem; }
+    .services .services-content h1 {
+      font-size: 50px;
+      font-family: Brandon_bld;
+      color: #2c2c2c; }
+    .services .services-content p {
+      font-size: 18px;
+      color: #616161;
+      width: 38%;
+      margin: 0 auto; }
+  .services .services-card {
+    display: flex;
+    width: 80%;
+    text-align: left;
+    margin: 0 auto;
+    background: inherit;
+    border-radius: 50px;
+    overflow: hidden;
+    justify-content: space-between; }
+    .services .services-card img {
+      width: 55%;
+      height: auto; }
+    .services .services-card .services-card-content {
+      padding: 0 20px;
+      border-left: 1px solid #fff;
+      border-right: 1px solid #fff;
+      align-self: center;
+      color: #464646;
+      margin-left: 3rem; }
+
+#events {
+  padding-top: 8rem;
+  padding-bottom: 4rem;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("../img/job.jpg");
+  background-attachment: fixed;
+  background-size: cover; }
+  #events .eventBox {
+    width: 70%;
+    margin: 1.5rem auto;
+    background: #eee;
+    display: flex;
+    flex-direction: column;
+    font-family: Brandon_reg;
+    border-radius: 0.7rem;
+    overflow: hidden; }
+    #events .eventBox .eventMedia {
+      height: 190px;
+      background-position-y: 35%; }
+    #events .eventBox .eventDetails {
+      flex: 0.7;
+      padding: 1rem 0.5rem 0.5rem 1.5rem; }
+      #events .eventBox .eventDetails .eventName {
+        font-family: Brandon_bld;
+        font-size: 1.5rem;
+        color: '#222'; }
+      #events .eventBox .eventDetails .eventVenue {
+        font-size: 1rem;
+        color: #11b6d3; }
+      #events .eventBox .eventDetails .eventDateTime {
+        color: #444; }
+
+#jobs {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.4)), url("../img/job.jpg");
+  background-attachment: fixed;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  padding-top: 7rem;
+  padding-bottom: 3rem; }
+
+.jobBox {
+  background: #ddd;
+  border-radius: .5rem;
+  width: 70%;
+  margin: 1.5rem auto;
+  padding-top: 0;
+  overflow: hidden; }
+  .jobBox .jobTitle {
+    background: #141414;
+    color: #ddd;
+    font-size: 1.25rem;
+    padding: 0.33rem 1.5rem;
+    display: flex;
+    align-items: center; }
+  .jobBox .jobPadding, .jobBox .preference {
+    padding: 0.9rem 1.5rem;
+    padding-bottom: 0.5rem; }
+  .jobBox .savedPreferenceBox {
+    display: flex;
+    justify-content: space-between;
+    width: 50%; }
+    .jobBox .savedPreferenceBox .savedPreference {
+      text-align: center;
+      border: 0.5px solid #999;
+      flex: 0.45;
+      background: #eee;
+      color: #222;
+      border-radius: 1rem; }
+  .jobBox .preference {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap; }
+    .jobBox .preference .preferenceTitle {
+      margin-right: 0.5rem; }
+    .jobBox .preference :nth-child(1n) {
+      flex: 1; }
+    .jobBox .preference #preferenceSave {
+      flex: 0.3; }
+  .jobBox .jobCompany {
+    font-size: 1rem;
+    margin-bottom: 0.2rem; }
+  .jobBox .jobDetails {
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 0.9rem;
+    width: 100%; }
+    .jobBox .jobDetails :nth-child(1n) {
+      flex: 50%;
+      margin-bottom: 0.25rem; }
+  .jobBox .jobFooter {
+    margin-top: 0.5rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center; }
+    .jobBox .jobFooter .jobPoster {
+      flex: 1;
+      display: flex;
+      align-items: center; }
+      .jobBox .jobFooter .jobPoster img {
+        width: 1.5rem;
+        height: 1.5rem;
+        border-radius: 50%;
+        margin-right: 0.7rem; }
+      .jobBox .jobFooter .jobPoster .jobRecruiterName {
+        flex: 0.8; }
+    .jobBox .jobFooter .jobPostedOn {
+      flex: 1;
+      font-size: 0.8rem; }
+
+#contact {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.4)), url("../img/job.jpg");
+  background-attachment: fixed;
+  background-size: cover;
+  height: 100vh;
+  padding-top: 10rem;
+  box-sizing: border-box; }
+  #contact #contactBox {
+    width: 70%;
+    margin: 0 auto;
+    padding: 2rem;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex; }
+    #contact #contactBox #left {
+      flex: 0.4; }
+    #contact #contactBox #contactTitle {
+      font-size: 2.5rem;
+      color: #ddd; }
+    #contact #contactBox #contactAddress, #contact #contactBox #contactContacts {
+      color: #999;
+      font-size: 0.9rem;
+      margin: 1rem 0; }
+    #contact #contactBox #map {
+      flex: 1; }
+
+#recruiterBanner {
+  height: 80vh;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.7)), url("../img/grad.jpg");
+  background-attachment: fixed;
+  background-size: cover;
+  background-position-y: 20%;
+  margin: 0 auto;
+  padding-top: 8rem;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center; }
+  #recruiterBanner #bannerTitle {
+    font-size: 3.2rem;
+    width: 45%;
+    color: #eee;
+    margin-top: 3rem;
+    font-family: Brandon_bld; }
+  #recruiterBanner #recruiterBannerButton {
+    background: #508df0;
+    font-size: 1.3rem;
+    padding: 0.8rem 1.3rem;
+    margin-top: 1.5rem;
+    border-radius: 2rem; }
+
+#recruitersTitle {
+  font-size: 3rem;
+  color: #ccc;
+  background: #333;
+  text-align: center; }
+
+#recruiters {
+  background-attachment: fixed;
+  background-size: cover;
+  padding-bottom: 3rem; }
+  #recruiters #recruitersContainer {
+    display: flex;
+    flex-wrap: wrap;
+    width: 70%;
+    margin: 3rem auto;
+    margin-bottom: 0; }
+    #recruiters #recruitersContainer :nth-child(1n+5) {
+      margin-top: 2.5rem; }
+    #recruiters #recruitersContainer .recruiterBox {
+      width: 25%;
+      text-align: center;
+      color: #666; }
+      #recruiters #recruitersContainer .recruiterBox :nth-child(1n) {
+        margin: 0; }
+      #recruiters #recruitersContainer .recruiterBox .recruiterAvatar {
+        border-radius: 50%;
+        width: 8rem;
+        height: 8rem;
+        margin-bottom: 1rem; }
+      #recruiters #recruitersContainer .recruiterBox .recruiterName {
+        color: #444;
+        margin-bottom: 0.4rem; }
+
+#profile {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)), url("../img/profile.jpg");
+  background-position-x: 24.5%;
+  height: 60vh;
+  display: flex;
+  justify-content: center;
+  padding-top: 12rem;
+  box-sizing: border-box; }
+  #profile #profileContainer {
+    display: flex;
+    justify-content: center; }
+    #profile #profileContainer #profileAvatar {
+      width: 11rem;
+      height: 11rem;
+      border-radius: 50%;
+      background-size: cover;
+      margin-right: 2rem; }
+    #profile #profileContainer #profileDetails #profileName {
+      font-size: 2.5rem;
+      color: #222; }
+    #profile #profileContainer #profileDetails #profileClass {
+      font-size: 1.8rem;
+      color: #aaa; }
+
+#profileInformation {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  padding-top: 3rem;
+  width: 70%;
+  margin: 0 auto; }
+
+.profileJobBox {
+  flex: 60%;
+  margin: 0;
+  margin-right: auto;
+  margin-bottom: 1.5rem; }
+
+#profileJobBoxTwo {
+  width: 100%;
+  margin: 0;
+  margin-left: 1rem;
+  margin-bottom: 1.5rem; }
+
+.profileJobBoxHeading {
+  font-size: 1.3rem;
+  color: #333; }
+
+.workBox {
+  margin: 1.5rem 0; }
+
+.workCompany {
+  font-size: 1.22rem;
+  color: #508df0; }
+
+.profileJobBoxContent {
+  color: #666;
+  font-size: 1rem; }
+
+.workBoxContent {
+  color: #666;
+  font-size: 0.9rem; }
+
+.workSkillBox {
+  display: flex;
+  margin-bottom: 0.7rem; }
+  .workSkillBox .workSkill {
+    border-radius: 1rem;
+    padding: 0.3rem 0.7rem;
+    font-size: 1rem;
+    color: #eeef;
+    background: #508df0;
+    margin-right: 1rem; }
